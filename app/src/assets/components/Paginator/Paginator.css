@@ -1,0 +1,57 @@
+.paginator {
+  width: 192px;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paginator > div {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey-300);
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.paginator > div > img {
+  width: 16px;
+  height: 16px;
+}
+
+.paginator > span {
+  max-width: 112px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.paginator > span > div {
+  display: flex;
+  width: 100%;
+  height: 32px;
+  position: relative;
+  transition: all ease 0.4s;
+}
+
+.paginator > span > div > div {
+  display: flex;
+}
+
+.paginator > span > div > div > button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  border: 1px solid var(--grey-300);
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.paginator > span > div > div > .active_page {
+  background-color: var(--purple-500);
+  color: var(--white);
+}

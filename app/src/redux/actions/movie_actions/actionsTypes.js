@@ -1,0 +1,1 @@
+export const SET_RATED_MOVIE = 'SET_RATED_MOVIE';

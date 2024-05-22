@@ -1,0 +1,50 @@
+.input_number {
+  width: 138px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_number > p {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.input_number > div {
+  width: 100%;
+  margin-top: 8px;
+  min-height: 42px;
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  border: 1px solid var(--grey-300);
+}
+
+.input_number > div > input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.input_number > div > input::-webkit-inner-spin-button,
+.input_number > div > input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input_number > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input_number > div > div > img {
+  width: 12px;
+  height: 12px;
+}
+
+.input_number > div > div > img:nth-of-type(2) {
+  transform: rotate(180deg);
+}

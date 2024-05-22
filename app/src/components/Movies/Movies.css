@@ -1,0 +1,30 @@
+.movies {
+  width: 980px;
+  margin-top: 40px;
+  margin-bottom: 56px;
+  margin-left: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  width: 100%;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.movies_list {
+  margin-top: 106px;
+}
+
+.movies > span {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter {
+  margin-top: 40px;
+}

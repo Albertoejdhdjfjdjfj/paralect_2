@@ -1,0 +1,25 @@
+body:has(.rating_pop_up_wrapper) {
+  overflow: hidden;
+}
+
+.rating_pop_up_wrapper {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating_pop_up {
+  position: absolute;
+  z-index: 3;
+  width: 380px;
+  height: 208px;
+  border-radius: 8px;
+  background-color: var(--white);
+}
