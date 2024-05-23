@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { set_rated_movie } from '../../../redux/actions/movie_actions/actions';
+import { useNavigate } from 'react-router-dom';
 import { image_host } from '../../functions/apiFunctions/confing';
 import { getGenres } from '../../functions/apiFunctions/requestsFunctions';
 import RatingPopUp from './RatingPopUp/RatingPopUp';
@@ -10,6 +11,7 @@ const MoviesList = ({ data }) => {
   const rated_movie = useSelector((state) => state.movie_state.rated_movie);
   const [genres, setGenres] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function getGenresByIds(genreIds) {
     const list = genres.genres.map((genre) => {
@@ -20,8 +22,14 @@ const MoviesList = ({ data }) => {
   }
 
   function parseVote(num) {
-    if (num.toString().length >= 4 && num.toString().length <= 7) {
+    const strNum = num.toString();
+    if (strNum.length >= 4 && strNum.length < 7) {
+      return String(Math.round(num / 1000)) + 'K';
+    } else if ((strNum, length >= 7)) {
+      return String(Math.round(num / 100000) / 10) + 'M';
     }
+
+    return String(num);
   }
 
   async function getGenresData() {
@@ -38,7 +46,7 @@ const MoviesList = ({ data }) => {
       {rated_movie && <RatingPopUp />}
       {data &&
         data.results.map((film) => (
-          <div key={film.id} className="film">
+          <div key={film.id} className="film" onClick={() => navigate('/' + film.id)}>
             <img src={image_host + film.poster_path} />
             <div>
               <span>
@@ -47,7 +55,7 @@ const MoviesList = ({ data }) => {
                 <div>
                   <Star className="yellow_star" />
                   <p>{String(film.vote_average).slice(0, 3)}</p>
-                  <span>({film.vote_count})</span>
+                  <span>({vfilm.vote_count})</span>
                 </div>
                 <div>
                   <p>Genres</p>

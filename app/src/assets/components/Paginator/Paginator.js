@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { select_page } from '../../../redux/actions/filter_actions/actions';
@@ -32,7 +33,9 @@ const Paginator = ({ length }) => {
 
   useEffect(() => {
     dispatch(select_page(1));
-    length / 4 < 1 ? '' : setNum(Math.ceil(length / 4));
+    if (length / 4 > 1) {
+      setNum(Math.ceil(length / 4));
+    }
   }, []);
 
   useEffect(() => {
