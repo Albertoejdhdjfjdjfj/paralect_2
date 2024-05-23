@@ -35,7 +35,7 @@ const MoviesList = ({ data }) => {
   async function getGenresData() {
     const res = await getGenres();
     setGenres(res);
-  }
+  } 
 
   useEffect(() => {
     getGenresData();
