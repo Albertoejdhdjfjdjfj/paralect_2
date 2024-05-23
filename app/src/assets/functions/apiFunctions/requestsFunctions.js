@@ -29,14 +29,14 @@ export async function getMovies(filter) {
   return await res.json();
 }
 
-// export async function getMovie(id) {
-//   const res = await fetch(host + `/movie/${id}?language=${language}`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Authorization: apiToken
-//     }
-//   });
+export async function getMovie(id) {
+  const res = await fetch(host + `/movie/${id}?language=${language}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: apiToken
+    }
+  });
 
-//   return await res.json();
-// }
+  return await res.json();
+}
