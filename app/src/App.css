@@ -13,7 +13,10 @@
 :root {
   --width-desc: 1440;
   --purple-100: rgba(242, 235, 249, 1);
+  --purple-200: rgba(229, 213, 250, 1);
+  --purple-400: rgba(189, 147, 247, 1);
   --purple-500: rgba(152, 84, 246, 1);
+  --purple-600: rgba(84, 31, 157, 1);
   --black: rgba(0, 0, 0, 1);
   --grey-100: rgba(245, 245, 246, 1);
   --grey-200: rgba(234, 235, 237, 1);
@@ -26,6 +29,7 @@
 
 .App {
   width: 100%;
+  min-height: 100vh;
   background-color: var(--grey-100);
   display: flex;
 }

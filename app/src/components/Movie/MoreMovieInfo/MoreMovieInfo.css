@@ -68,20 +68,20 @@
     align-items: center;
     background-color: var(--white);
   }
-  
+
   .more_movie_info > h3 {
     font-size: 20px;
     font-weight: 700;
     color: var(--black);
   }
-  
+
   .more_movie_info > iframe {
     margin-top: 16px;
     width: 90%;
     height: 250px;
     border-radius: 9px;
   }
-  
+
   .more_movie_info > hr {
     border: none;
     width: 100%;
@@ -89,31 +89,31 @@
     background-color: var(--grey-300);
     margin: 20px 0 20px 0;
   }
-  
+
   .more_movie_info > p {
     margin-top: 16px;
     width: 100%;
     text-align: center;
     line-height: 22px;
   }
-  
+
   .more_movie_info > div {
     margin-top: 4px;
     display: flex;
     flex-direction: column;
   }
-  
+
   .more_movie_info > div > div {
     margin-top: 12px;
     width: 100%;
     display: flex;
     align-items: center;
   }
-  
+
   .more_movie_info > div > div > img {
     width: 40px;
   }
-  
+
   .more_movie_info > div > div > p {
     margin-left: 8px;
     font-weight: 700;

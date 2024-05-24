@@ -26,6 +26,18 @@
   align-items: center;
   font-size: 14px;
   font-weight: 500;
+  color: var(--purple-500);
+}
+
+.filter > span > p:hover {
+  color: var(--purple-400);
+}
+
+.filter > span > p:active {
+  color: var(--purple-600);
+}
+
+.filter > span > .disabled_filter {
   color: var(--grey-600);
 }
 
@@ -57,6 +69,19 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+  }
+
+  .filter > span > p {
+    margin-top: 42px;
+    padding: 6px 20px 6px 20px;
+    border-radius: 20px;
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
   }
 
   .filter > span > .input_number:nth-of-type(2) {

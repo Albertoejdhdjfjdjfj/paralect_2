@@ -88,6 +88,14 @@ body:has(.rating_pop_up_wrapper) {
   background-color: var(--purple-500);
 }
 
+.rating_pop_up > div:nth-of-type(2) > div > p:first-of-type:hover {
+  background-color: var(--purple-400);
+}
+
+.rating_pop_up > div:nth-of-type(2) > div > p:first-of-type:active {
+  background-color: var(--purple-600);
+}
+
 .rating_pop_up > div:nth-of-type(2) > div > p:nth-of-type(2) {
   margin-left: 16px;
   font-size: 14px;

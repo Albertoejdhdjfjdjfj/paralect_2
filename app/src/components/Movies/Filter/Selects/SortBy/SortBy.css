@@ -31,6 +31,10 @@
   border: 1px solid var(--purple-500);
 }
 
+.sort_select > div:hover > .select_arrow path {
+  stroke: var(--purple-400);
+}
+
 .sort_select > div > p {
   width: 235px;
   font-size: 14px;

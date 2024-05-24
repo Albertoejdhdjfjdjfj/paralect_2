@@ -40,7 +40,7 @@
     justify-content: space-between;
   }
 
-  .rated_movies >span> .search_input {
+  .rated_movies > span > .search_input {
     margin-top: 40px;
   }
 }

@@ -4,12 +4,12 @@ import { set_rated_movie } from '../../../redux/actions/movie_actions/actions';
 import { useNavigate } from 'react-router-dom';
 import { image_host } from '../../functions/apiFunctions/confing';
 import { getGenres } from '../../functions/apiFunctions/requestsFunctions';
-import RatingPopUp from './RatingPopUp/RatingPopUp';
 import { ReactComponent as Star } from '../../../assets/images/Star.svg';
+import EmptyMovies from './EmptyMovies/EmptyMovies';
 import NoPoster from '../../../assets/images/NoPoster.svg';
 import './MoviesList.css';
 
-const MoviesList = ({ data }) => {
+const MoviesList = ({ data}) => {
   const rated_movie = useSelector((state) => state.movie_state.rated_movie);
   const [genres, setGenres] = useState(null);
   const [rated_movies, setRatedMovies] = useState([]);
@@ -60,8 +60,8 @@ const MoviesList = ({ data }) => {
 
   return (
     <div className="movies_list">
-      {rated_movie && <RatingPopUp />}
       {data &&
+        data.length !== 0 &&
         data.map((movie) => (
           <div key={movie.id} className="movie">
             <img
@@ -95,6 +95,7 @@ const MoviesList = ({ data }) => {
             </div>
           </div>
         ))}
+      {data && data.length == 0 && <EmptyMovies />}
     </div>
   );
 };

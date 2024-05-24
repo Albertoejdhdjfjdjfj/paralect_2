@@ -32,6 +32,10 @@
   border: 1px solid var(--purple-500);
 }
 
+.genre_select > div:hover > .select_arrow path {
+  stroke: var(--purple-400);
+}
+
 .genre_select > div > p {
   width: 235px;
   font-size: 14px;
