@@ -5,7 +5,9 @@ import Navbar from './components/Navbar/Navbar';
 import Movies from './components/Movies/Movies';
 import Movie from './components/Movie/Movie';
 import RatedMovies from './components/RatedMovies/RatedMovies';
-import RatingPopUp from './assets/components/MoviesList/RatingPopUp/RatingPopUp';
+import RatingPopUp from './assets/components/RatingPopUp/RatingPopUp';
+import NotFound from './components/NotFound/NotFound';
+
 import './App.css';
 
 function App() {
@@ -19,7 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Movies />} />
           <Route path="/rated" element={<RatedMovies />} />
-          <Route path="/:id" element={<Movie />} />
+          <Route path="/movie/:id" element={<Movie />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>

@@ -12,9 +12,7 @@ const RatingTo = () => {
 
   const handleInput = (event) => {
     if (event.target.value >= 0 && event.target.value <= 10) {
-      dispatch(select_rating_to(Number(event.target.value)));
-    } else {
-      dispatch(select_rating_to(''));
+      dispatch(select_rating_to(event.target.value));
     }
   };
 

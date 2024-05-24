@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { set_rated_movie } from '../../../../redux/actions/movie_actions/actions';
-import Close from '../../../images/Close.svg';
-import { ReactComponent as Star } from '../../../images/Star.svg';
+import { set_rated_movie } from '../../../redux/actions/movie_actions/actions';
+import Close from '../../images/Close.svg';
+import { ReactComponent as Star } from '../../images/Star.svg';
 import './RatingPopUp.css';
 
 const RatingPopUp = () => {
@@ -10,37 +10,34 @@ const RatingPopUp = () => {
   const [rating, setRating] = useState(0);
   const dispatch = useDispatch();
 
+  const isMarked = (index) => rating >= index + 1;
+
   const saveRating = () => {
-    const data = localStorage.getItem('rated_movies');
-    const rated_movies = JSON.parse(data) || [];
-    const index = rated_movies.findIndex((item) => item.id === movie.id);
+    const data = JSON.parse(localStorage.getItem('rated_movies')) || [];
+    const index = data.findIndex((item) => item.id === movie.id);
 
     if (index !== -1) {
-      rated_movies[index] = { ...movie, local_rating: rating };
+      data[index] = { ...movie, local_rating: rating };
     } else {
-      rated_movies.push({ ...movie, local_rating: rating });
+      data.push({ ...movie, local_rating: rating });
     }
 
-    localStorage.setItem('rated_movies', JSON.stringify(rated_movies));
+    localStorage.setItem('rated_movies', JSON.stringify(data));
     dispatch(set_rated_movie(null));
   };
 
   const removeRating = () => {
-    const data = localStorage.getItem('rated_movies');
-    const rated_movies = JSON.parse(data) || [];
-    const new_rated_movies = JSON.stringify(rated_movies.filter((item) => item.id !== movie.id));
-    localStorage.setItem('rated_movies', new_rated_movies);
+    const data = JSON.parse(localStorage.getItem('rated_movies')) || [];
+    const rated_movies = JSON.stringify(data.filter((item) => item.id !== movie.id));
+    localStorage.setItem('rated_movies', rated_movies);
     dispatch(set_rated_movie(null));
   };
 
   useEffect(() => {
-    const data = localStorage.getItem('rated_movies');
-    const rated_movies = JSON.parse(data) || [];
-    const rated_movie = rated_movies.find((el) => el.id === movie.id);
+    const data = JSON.parse(localStorage.getItem('rated_movies')) || [];
+    const rated_movie = data.find((el) => el.id === movie.id);
     setRating(rated_movie?.local_rating || 0);
   }, []);
-
-  const isMarked = (index) => rating >= index + 1;
 
   return (
     <div className="rating_pop_up_wrapper">

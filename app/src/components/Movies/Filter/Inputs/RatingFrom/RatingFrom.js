@@ -9,11 +9,10 @@ const RatingFrom = () => {
   const rating_from = useSelector((state) => state.filter_state.rating_from);
   const [focus, changeFocus] = useDisplay();
   const dispatch = useDispatch();
+
   const handleInput = (event) => {
     if (event.target.value >= 0 && event.target.value <= 10) {
       dispatch(select_rating_from(event.target.value));
-    } else {
-      dispatch(select_rating_from(''));
     }
   };
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { image_host } from '../../../assets/functions/apiFunctions/confing';
 import { set_rated_movie } from '../../../redux/actions/movie_actions/actions';
 import { ReactComponent as Star } from '../../../assets/images/Star.svg';
@@ -10,16 +9,14 @@ import './MovieInfo.css';
 const MovieInfo = ({ data }) => {
   const [rated_movies, setRatedMovies] = useState([]);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   function isRated(id) {
     return rated_movies.some((movie) => movie.id === id);
   }
 
   function getRating(id) {
-    const data = localStorage.getItem('rated_movies');
-    const rated_movies = JSON.parse(data) || [];
-    const rated_movie = rated_movies.find((el) => el.id === id);
+    const data = JSON.parse(localStorage.getItem('rated_movies')) || [];
+    const rated_movie = data.find((el) => el.id === id);
     return String(rated_movie?.local_rating || '');
   }
 
@@ -59,10 +56,7 @@ const MovieInfo = ({ data }) => {
 
   return (
     <div className="movie_info">
-      <img
-        src={data.poster_path ? image_host + data.poster_path : NoPoster}
-        onClick={() => navigate('/' + data.id)}
-      />
+      <img src={data.poster_path ? image_host + data.poster_path : NoPoster} />
       <div>
         <span>
           <p>

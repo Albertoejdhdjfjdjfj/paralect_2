@@ -1,13 +1,11 @@
-/*eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { select_page } from '../../../redux/actions/filter_actions/actions';
-import { num_pages as length } from '../../constats/constants';
+import { reset_filters, select_page } from '../../../redux/actions/filter_actions/actions';
 import forward from '../../../assets/images/Arrow_Forward.svg';
 import back from '../../../assets/images/Arrow_Back.svg';
 import './Paginator.css';
 
-const Paginator = () => {
+const Paginator = ({ length, limit }) => {
   const [page, setPage] = useState(1);
   const [right, setRight] = useState(0);
   const [num, setNum] = useState(1);
@@ -33,9 +31,9 @@ const Paginator = () => {
   };
 
   useEffect(() => {
-    dispatch(select_page(1));
-    if (length / 4 > 1) {
-      setNum(Math.ceil(length / 4));
+    dispatch(reset_filters());
+    if (length / limit > 1) {
+      setNum(Math.ceil(length / limit));
     }
   }, []);
 

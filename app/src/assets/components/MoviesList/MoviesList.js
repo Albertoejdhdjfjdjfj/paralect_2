@@ -9,7 +9,7 @@ import EmptyMovies from './EmptyMovies/EmptyMovies';
 import NoPoster from '../../../assets/images/NoPoster.svg';
 import './MoviesList.css';
 
-const MoviesList = ({ data}) => {
+const MoviesList = ({ data }) => {
   const rated_movie = useSelector((state) => state.movie_state.rated_movie);
   const [genres, setGenres] = useState(null);
   const [rated_movies, setRatedMovies] = useState([]);
@@ -66,7 +66,7 @@ const MoviesList = ({ data}) => {
           <div key={movie.id} className="movie">
             <img
               src={movie.poster_path ? image_host + movie.poster_path : NoPoster}
-              onClick={() => navigate('/' + movie.id)}
+              onClick={() => navigate('/movie/' + movie.id)}
             />
             <div>
               <span>

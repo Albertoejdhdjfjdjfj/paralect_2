@@ -11,8 +11,11 @@ const Movie = () => {
   const navigate = useNavigate();
 
   async function getData(id) {
-    const data = await getMovie(id);
-    setData(data);
+    const res = await getMovie(id);
+    if (res.status >= 400) {
+      navigate('/not_found');
+    }
+    setData(await res.json());
   }
 
   useEffect(() => {

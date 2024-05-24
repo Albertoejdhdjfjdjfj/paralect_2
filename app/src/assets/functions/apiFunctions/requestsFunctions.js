@@ -38,5 +38,5 @@ export async function getMovie(id) {
     }
   });
 
-  return await res.json();
+  return res;
 }

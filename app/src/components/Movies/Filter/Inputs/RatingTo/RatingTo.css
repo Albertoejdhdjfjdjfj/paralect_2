@@ -23,6 +23,11 @@
   border: 1px solid var(--grey-300);
 }
 
+.input_number > div:hover,
+.input_number > .input_active {
+  border: 1px solid var(--purple-500);
+}
+
 .input_number > div > input {
   width: 100%;
   border: none;

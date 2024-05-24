@@ -21,10 +21,10 @@ const Filter = () => {
       filter.sort_by == '' &&
       filter.page == 1
     ) {
-      return false;
+      return true;
     }
 
-    return true;
+    return false;
   }
 
   return (
