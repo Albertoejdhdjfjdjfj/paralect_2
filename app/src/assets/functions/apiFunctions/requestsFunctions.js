@@ -30,7 +30,7 @@ export async function getMovies(filter) {
 }
 
 export async function getMovie(id) {
-  const res = await fetch(host + `/movie/${id}?language=${language}`, {
+  const res = await fetch(host + `/movie/${id}?language=${language}&append_to_response=videos`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

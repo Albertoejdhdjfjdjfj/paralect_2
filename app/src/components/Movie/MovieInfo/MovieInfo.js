@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { image_host } from '../../../assets/functions/apiFunctions/confing';
-import { getMovie, getGenres } from '../../../assets/functions/apiFunctions/requestsFunctions';
 import { set_rated_movie } from '../../../redux/actions/movie_actions/actions';
 import { ReactComponent as Star } from '../../../assets/images/Star.svg';
 import NoPoster from '../../../assets/images/NoPoster.svg';
@@ -10,7 +9,6 @@ import './MovieInfo.css';
 
 const MovieInfo = ({ data }) => {
   const [rated_movies, setRatedMovies] = useState([]);
-  const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

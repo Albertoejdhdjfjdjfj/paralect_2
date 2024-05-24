@@ -6,134 +6,24 @@
   flex-wrap: wrap;
 }
 
-.movie_page > h2 {
+.movie_page > nav {
+  width: min-content;
+  height: min-content;
   display: flex;
+  flex-direction: row;
   font-size: 15px;
   color: var(--black);
 }
 
-.movie_page > h2 > a {
+.movie_page > nav > a {
   font-size: 14px;
   color: var(--purple-500);
 }
 
-.movie_page > h2 > a:first-of-type {
+.movie_page > nav > a:first-of-type {
   margin-right: 10px;
 }
 
-.movie_page > h2 > a:nth-of-type(2) {
+.movie_page > nav > a:nth-of-type(2) {
   margin-left: 10px;
-}
-
-.movie_info {
-  margin-top: 20px;
-  width: 100%;
-  height: 400px;
-  padding: 24px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--white);
-}
-
-.movie_info > img {
-  width: 250px;
-  height: 352px;
-}
-
-.movie_info > div {
-  width: 486px;
-  height: 352px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.movie_info > div > span {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.movie_info > div > span > p {
-  max-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--purple-500);
-  overflow: hidden;
-}
-
-.movie_info > div > span > p > span {
-  height: 28px;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  color: var(--black);
-}
-
-.rating_star {
-  width: 28px;
-  height: 28px;
-}
-
-.rated_star {
-  margin-right: 4px;
-  width: 28px;
-  height: 28px;
-}
-
-.rated_star path {
-  stroke: var(--purple-500);
-  fill: var(--purple-500);
-}
-
-.movie_info > div > span > span {
-  margin-top: 8px;
-  display: block;
-  color: var(--grey-600);
-}
-
-.movie_info > div > span > div {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-}
-
-.movie_info > div > span > div > .yellow_star path {
-  fill: var(--yellow);
-  stroke: var(--yellow);
-}
-
-.movie_info > div > span > div > p {
-  margin-left: 4px;
-  font-weight: 600;
-}
-
-.movie_info > div > span > div > span {
-  margin-left: 8px;
-  color: var(--grey-600);
-}
-
-.movie_info > div > div {
-  height: 148px;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.movie_info > div > div > div {
-  display: flex;
-  color: var(--grey-600);
-}
-
-.movie_info > div > div > div > p {
-  position: absolute;
-  left: 140px;
-  color: var(--black);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
