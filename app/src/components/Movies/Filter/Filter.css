@@ -32,3 +32,34 @@
 .filter > span > .input_number:nth-of-type(2) {
   margin: 0 16px 0 8px;
 }
+
+@media (max-width: 1000px) {
+  .filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .filter .sort_select {
+    position: static;
+    width: 100%;
+    right: 0;
+  }
+
+  .filter > span {
+    margin-top: 8px;
+    width: 100%;
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .filter > span > .input_number:nth-of-type(2) {
+    margin: 0 0 0 0px;
+  }
+}

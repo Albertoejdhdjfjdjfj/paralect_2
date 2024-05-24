@@ -1,0 +1,46 @@
+.rated_movies {
+  width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rated_movies > span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rated_movies > span > h2 {
+  width: max-content;
+}
+
+.rated_movies > .movies_list {
+  margin-top: 40px;
+}
+
+.rated_movies > .paginator {
+  margin-top: 24px;
+}
+
+@media (max-width: 1000px) {
+  .rated_movies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rated_movies > span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .rated_movies >span> .search_input {
+    margin-top: 40px;
+  }
+}

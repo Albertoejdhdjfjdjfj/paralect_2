@@ -5,3 +5,4 @@ export const SELECT_RATING_TO = 'SELECT_RATING_TO';
 export const RESET_FILTERS = 'RESET_FILTERS';
 export const SELECT_SORT_BY = 'SELECT_SORT_BY';
 export const SELECT_PAGE = 'SELECT_PAGE';
+export const SET_SEARCH = 'SET_SEARCH';

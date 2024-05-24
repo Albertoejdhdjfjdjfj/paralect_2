@@ -4,7 +4,6 @@ body:has(.rating_pop_up_wrapper) {
 
 .rating_pop_up_wrapper {
   position: fixed;
-  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -94,4 +93,15 @@ body:has(.rating_pop_up_wrapper) {
   font-size: 14px;
   font-weight: 600;
   color: var(--purple-500);
+}
+
+@media (max-width: 390px) {
+  .rating_pop_up {
+    position: absolute;
+    z-index: 3;
+    width: 95%;
+    height: 208px;
+    border-radius: 8px;
+    background-color: var(--white);
+  }
 }

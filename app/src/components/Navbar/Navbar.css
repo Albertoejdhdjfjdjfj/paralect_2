@@ -6,7 +6,7 @@
   background-color: var(--purple-100);
 }
 
-.navbar>h1 {
+.navbar > h1 {
   font-size: 24px;
   font-weight: 600;
   font-family: 'Poppins';
@@ -15,13 +15,13 @@
   color: var(--purple-500);
 }
 
-.navbar>h1 > img {
+.navbar > h1 > img {
   width: 32px;
   height: 32px;
   margin-right: 12px;
 }
 
-.navbar>nav {
+.navbar > nav {
   margin-top: 80px;
   width: 232px;
   height: 100px;
@@ -30,11 +30,55 @@
   justify-content: space-between;
 }
 
-.navbar>nav > p {
+.navbar > nav > p {
   width: 100%;
   height: 42px;
   padding: 10px;
   border-radius: 8px;
   font-size: 16px;
   color: var(--black);
+}
+
+@media (max-width: 1300px) {
+  .navbar {
+    width: 100%;
+    height: min-content;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    background-color: var(--purple-100);
+  }
+
+  .navbar > h1 {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    display: flex;
+    align-items: center;
+    color: var(--purple-500);
+  }
+
+  .navbar > h1 > img {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+  }
+
+  .navbar > nav {
+    margin-top: 8px;
+    width: max-content;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar > nav > p {
+    width: max-content;
+    height: 42px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--black);
+  }
 }

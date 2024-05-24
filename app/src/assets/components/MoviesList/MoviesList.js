@@ -62,7 +62,7 @@ const MoviesList = ({ data }) => {
     <div className="movies_list">
       {rated_movie && <RatingPopUp />}
       {data &&
-        data.results.map((movie) => (
+        data.map((movie) => (
           <div key={movie.id} className="movie">
             <img
               src={movie.poster_path ? image_host + movie.poster_path : NoPoster}

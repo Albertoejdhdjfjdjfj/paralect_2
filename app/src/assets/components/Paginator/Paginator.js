@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { select_page } from '../../../redux/actions/filter_actions/actions';
+import { num_pages as length } from '../../constats/constants';
 import forward from '../../../assets/images/Arrow_Forward.svg';
 import back from '../../../assets/images/Arrow_Back.svg';
 import './Paginator.css';
 
-const Paginator = ({ length }) => {
+const Paginator = () => {
   const [page, setPage] = useState(1);
   const [right, setRight] = useState(0);
   const [num, setNum] = useState(1);

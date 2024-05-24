@@ -29,3 +29,25 @@
   background-color: var(--grey-100);
   display: flex;
 }
+
+.main {
+  width: 100%;
+  padding: 40px 0 82px 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1300px) {
+  .App {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+    padding: 40px 10px 82px 10px;
+    display: flex;
+    justify-content: center;
+  }
+}

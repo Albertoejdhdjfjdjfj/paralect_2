@@ -5,7 +5,8 @@ import {
   SELECT_RATING_TO,
   RESET_FILTERS,
   SELECT_SORT_BY,
-  SELECT_PAGE
+  SELECT_PAGE,
+  SET_SEARCH
 } from '../../actions/filter_actions/actionsTypes';
 
 const initialState = {
@@ -14,7 +15,8 @@ const initialState = {
   rating_from: '',
   rating_to: '',
   sort_by: '',
-  page: 1
+  page: 1,
+  search: ''
 };
 
 export default function filter_state(state = initialState, action) {
@@ -31,6 +33,8 @@ export default function filter_state(state = initialState, action) {
       return { ...state, sort_by: action.payload };
     case SELECT_PAGE:
       return { ...state, page: action.payload };
+    case SET_SEARCH:
+      return { ...state, search: action.payload };
     case RESET_FILTERS:
       return initialState;
     default:
