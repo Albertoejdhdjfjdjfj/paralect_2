@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getMovie } from '../../assets/functions/apiFunctions/requestsFunctions';
 import MovieInfo from './MovieInfo/MovieInfo';
 import MoreMovieInfo from './MoreMovieInfo/MoreMovieInfo';
+import Loader from '../../assets/components/Loader/Loader'
 import './Movie.css';
 
 const Movie = () => {
@@ -24,11 +25,14 @@ const Movie = () => {
 
   return (
     <div className="movie_page">
-      <nav>
-        <a onClick={() => navigate('/')}>Movies</a>/<a>{data && data.original_title}</a>
-      </nav>
+      {!data&&<Loader/>}
+      {data && (
+        <nav>
+          <a onClick={() => navigate('/')}>Movies</a>/<a>{data.original_title}</a>
+        </nav>
+      )}
       {data && <MovieInfo data={data} />}
-      {data && <MoreMovieInfo data={data} />}
+      {data && data?.videos?.results[0] && <MoreMovieInfo data={data} />}
     </div>
   );
 };

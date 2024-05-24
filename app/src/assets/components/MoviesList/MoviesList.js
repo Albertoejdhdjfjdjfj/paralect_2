@@ -60,41 +60,39 @@ const MoviesList = ({ data }) => {
 
   return (
     <div className="movies_list">
-      {data &&
-        data.length !== 0 &&
-        data.map((movie) => (
-          <div key={movie.id} className="movie">
-            <img
-              src={movie.poster_path ? image_host + movie.poster_path : NoPoster}
-              onClick={() => navigate('/movie/' + movie.id)}
-            />
-            <div>
-              <span>
-                <p>
-                  {movie.original_title}
-                  <span>
-                    <Star
-                      className={isRated(movie.id) ? 'rated_star' : 'rating_star'}
-                      onClick={() => dispatch(set_rated_movie(movie))}
-                    />
+      {data.map((movie) => (
+        <div key={movie.id} className="movie">
+          <img
+            src={movie.poster_path ? image_host + movie.poster_path : NoPoster}
+            onClick={() => navigate('/movie/' + movie.id)}
+          />
+          <div>
+            <span>
+              <p>
+                {movie.original_title}
+                <span>
+                  <Star
+                    className={isRated(movie.id) ? 'rated_star' : 'rating_star'}
+                    onClick={() => dispatch(set_rated_movie(movie))}
+                  />
 
-                    {getRating(movie.id)}
-                  </span>
-                </p>
-                <span>{String(movie.release_date).slice(0, 4)}</span>
-                <div>
-                  <Star className="yellow_star" />
-                  <p>{String(movie.vote_average).slice(0, 3)}</p>
-                  <span>({parseVote(movie.vote_count)})</span>
-                </div>
-              </span>
+                  {getRating(movie.id)}
+                </span>
+              </p>
+              <span>{String(movie.release_date).slice(0, 4)}</span>
               <div>
-                Genres
-                <p>{genres && getGenresByIds(movie.genre_ids)}</p>
+                <Star className="yellow_star" />
+                <p>{String(movie.vote_average).slice(0, 3)}</p>
+                <span>({parseVote(movie.vote_count)})</span>
               </div>
+            </span>
+            <div>
+              Genres
+              <p>{genres && getGenresByIds(movie.genre_ids)}</p>
             </div>
           </div>
-        ))}
+        </div>
+      ))}
       {data && data.length == 0 && <EmptyMovies />}
     </div>
   );

@@ -1,7 +1,7 @@
 .not_found {
   width: 100vw;
   height: 100vh;
-  top:0;
+  top: 0;
   left: 0;
   position: absolute;
   z-index: 4;
@@ -39,7 +39,7 @@
 
 .not_found > h1 {
   position: absolute;
-  top:24px;
+  top: 24px;
   left: 24px;
   font-size: 24px;
   font-weight: 600;

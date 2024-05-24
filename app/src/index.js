@@ -5,10 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import combineReducers from './redux/reducers/combineReducers';
-
-const composeEnhancers = 'object' && window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'];
-const enhancer = composeEnhancers();
-const store = createStore(combineReducers, enhancer);
+const store = createStore(combineReducers);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

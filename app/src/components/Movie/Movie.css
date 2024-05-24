@@ -1,7 +1,7 @@
 .movie_page {
   width: 800px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -17,6 +17,7 @@
 .movie_page > nav > a {
   font-size: 14px;
   color: var(--purple-500);
+  cursor: pointer;
 }
 
 .movie_page > nav > a:first-of-type {
@@ -27,11 +28,13 @@
   margin-left: 10px;
 }
 
+
+
 @media (max-width: 1000px) {
   .movie_page {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
 

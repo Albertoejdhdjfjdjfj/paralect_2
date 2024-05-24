@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { reset_filters } from '../../redux/actions/filter_actions/actions';
 import { getMovies } from '../../assets/functions/apiFunctions/requestsFunctions';
 import { num_movies, movies_limit } from '../../assets/constats/constants';
 import Filter from './Filter/Filter';
 import MoviesList from '../../assets/components/MoviesList/MoviesList';
+import Loader from '../../assets/components/Loader/Loader';
 import Paginator from '../../assets/components/Paginator/Paginator';
 import './Movies.css';
 
 const Movies = () => {
   const filter = useSelector((state) => state.filter_state);
   const [data, setData] = useState(null);
-  const dispatch = useDispatch();
 
   async function getData(filter) {
     const movies = await getMovies(filter);
@@ -26,7 +25,7 @@ const Movies = () => {
     <div className="movies">
       <h2>Movies</h2>
       <Filter />
-      <MoviesList data={data?.results} />
+      {data ? <MoviesList data={data?.results} /> : <Loader />}
       <span>
         {data && data.results.length !== 0 && (
           <Paginator length={num_movies} limit={movies_limit} />
